@@ -14,7 +14,7 @@ export default function Home() {
       <div>
         <h1>Blasting Off!</h1>
       </div>
-      <div>
+      <div className='flex-grow'>
         <RiveContainer></RiveContainer>
       </div>
     </main>
