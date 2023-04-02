@@ -9,12 +9,14 @@ import Rive, {
 
 export default function RiveContainer() {
   const { rive, RiveComponent } = useRive({
-    src: "rocket-animation.riv",
+    src: "/rocket-animation.riv",
     autoplay: true,
-    layout: new Layout({
-      fit: Fit.Cover,
-      alignment: Alignment.Center,
-    }),
+    // layout: new Layout({
+    //   fit: Fit.Cover,
+    //   alignment: Alignment.Center,
+    // }),
+    artboard: "New Artboard",
+    stateMachines: ["State Machine 1"],
   });
 
   if (rive?.contents) {
@@ -23,8 +25,15 @@ export default function RiveContainer() {
   }
 
   return (
-    <div className="rive-container">
-      <RiveComponent />
+    <div className="flex justify-center">
+      <div className="h-[300px] w-[300px] xmd:h-[450px] xmd:w-[450px] md:h-[500px] md:w-[500px]">
+        <RiveComponent
+          onMouseEnter={() => rive && rive.play()}
+          onMouseLeave={() =>
+            rive && rive.pause()
+          }
+        />
+      </div>
     </div>
   );
 }

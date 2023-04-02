@@ -11,9 +11,11 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   return (
     <main className={styles.main}>
-      <h1>Blasting Off!</h1>
-      <div className="rocket-container">
-        <RiveContainer />
+      <div>
+        <h1>Blasting Off!</h1>
+      </div>
+      <div>
+        <RiveContainer></RiveContainer>
       </div>
     </main>
   );
